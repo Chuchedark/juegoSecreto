@@ -15,16 +15,13 @@ function verificarIntento(){
     console.log(intentos);
     if(numeroDeUsuario === numeroSecreto){
         asignarTextoElemento("p",`Acertaste el número en ${intentos} ${(intentos === 1) ? "vez" : "veces"}`);
-        
+        document.getElementById("reiniciar").removeAttribute("Disabled");
         return;
     } else{
         //EL usuario no acertó
         if (numeroDeUsuario > numeroSecreto) {
             asignarTextoElemento("p", "El numero secreto es menor");
-            
-
         }else{
-            document.getElementById("reiniciar").removeAttribute("Disabled");
             asignarTextoElemento("p","El número secreto es mayor");
         }
         intentos ++;
